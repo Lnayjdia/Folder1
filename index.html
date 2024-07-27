@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Hikmah Murni!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff0f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffcccb;
+        }
+
+        header h1 {
+            color: #ff69b4;
+        }
+
+        header p {
+            color: #ff1493;
+        }
+
+        .main-photo {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #ff69b4;
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .photo {
+            text-align: center;
+        }
+
+        .photo img {
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        video {
+            display: block;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        #timer {
+            font-size: 24px;
+            color: #ff1493;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .testimonials-container {
+            padding: 20px;
+            background-color: #ffe4e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Ulang Tahun ke-22, Hikmah Murni Tercinta!</h1>
+        <img src="dimas.jpg" alt="Foto Romantis" class="main-photo">
+        <p>Jarak mungkin memisahkan kita, tapi cinta kita selalu dekat di hati. Aku mencintaimu lebih dari kata-kata bisa ungkapkan.</p>
+    </header>
+
+    <section id="gallery">
+        <h2>Galeri Kenangan</h2>
+        <div class="photo-gallery">
+            <div class="photo">
+                <img src="hikmah.jpg" alt="Foto 1">
+                <p>Momen Indah 1</p>
+            </div>
+            <div class="photo">
+                <img src="cinta.jpg" alt="Foto 2">
+                <p>Momen Indah 2</p>
+            </div>
+            <!-- Tambahkan lebih banyak foto sesuai kebutuhan -->
+        </div>
+        <h3>Video Kompilasi</h3>
+        <video controls>
+            <source src="terbaik.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section id="love-letter">
+        <h2>Surat Cinta</h2>
+        <p>Untuk Hikmah Murni tercinta, ...</p>
+        <p>Surat panjang yang penuh dengan perasaan cinta dan harapan untuk masa depan bersama. Ceritakan betapa berartinya dia dalam hidupmu dan betapa kamu menantikan hari di mana kalian akan halal bersama.</p>
+    </section>
+
+    <section id="countdown">
+        <h2>Countdown Timer</h2>
+        <div id="timer"></div>
+        <p>Setiap detik yang berlalu adalah langkah mendekat ke hari kita bersama.</p>
+    </section>
+
+    <section id="testimonials">
+        <h2>Testimoni Cinta</h2>
+        <div class="testimonials-container">
+            <!-- Tambahkan testimoni teman dan keluarga -->
+        </div>
+    </section>
+
+    <script>
+        // Countdown Timer
+        const countdownDate = new Date("2024-12-31T00:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = days + "d " + hours + "h " +
+                minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "Hari ini adalah hari kita bersama!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
